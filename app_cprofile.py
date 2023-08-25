@@ -1,4 +1,5 @@
 from flask import Flask
+import cProfile
 
 app = Flask(__name__)
 
@@ -8,4 +9,6 @@ def hello_world():
 
 if __name__ == "__main__":
   context = ('DependentCert.pem', 'MyDependentCertPrivate.key')
-  app.run(debug=True, host="0.0.0.0", port=8443, ssl_context=context)
+  with cProfile.Profile() as pr:
+    app.run(debug=True, host="0.0.0.0", port=8443, ssl_context=context)
+    pr.dump_stats('flask_app.prof')
