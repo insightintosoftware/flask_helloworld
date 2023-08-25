@@ -1,9 +1,13 @@
+from line_profiler import profile
 from flask import Flask
 
 app = Flask(__name__)
 
+@profile
 @app.route('/')
 def hello_world():
+  for x in range(10):
+    print(x)
   return 'Hello, World!'
 
 if __name__ == "__main__":

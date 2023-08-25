@@ -1,0 +1,20 @@
+digraph {
+	graph [fontname=Arial, nodesep=0.125, ranksep=0.25];
+	node [fontcolor=white, fontname=Arial, height=0, shape=box, style=filled, width=0];
+	edge [fontname=Arial];
+	15 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="app:1064:run\n100.00%\n(0.00%)\n1×", tooltip="C:\\projects\\flask_helloworld\\Lib\\site-packages\\flask\\app.py"];
+	15 -> 150 [arrowsize="1.00", color="#ff0000", fontcolor="#ff0000", fontsize="10.00", label="99.98%\n1×", labeldistance="4.00", penwidth="4.00"];
+	150 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="serving:936:run_simple\n99.98%\n(0.00%)\n1×", tooltip="C:\\projects\\flask_helloworld\\Lib\\site-packages\\werkzeug\\serving.py"];
+	150 -> 262 [arrowsize="1.00", color="#ff0200", fontcolor="#ff0200", fontsize="10.00", label="99.84%\n1×", labeldistance="3.99", penwidth="3.99"];
+	256 [color="#ff0200", fontcolor="#ffffff", fontsize="10.00", label="_reloader:257:restart_with_reloader\n99.84%\n(0.00%)\n1×", tooltip="C:\\projects\\flask_helloworld\\Lib\\site-packages\\werkzeug\\_reloader.py"];
+	256 -> 266 [arrowsize="1.00", color="#ff0200", fontcolor="#ff0200", fontsize="10.00", label="99.83%\n1×", labeldistance="3.99", penwidth="3.99"];
+	262 [color="#ff0200", fontcolor="#ffffff", fontsize="10.00", label="_reloader:417:run_with_reloader\n99.84%\n(0.00%)\n1×", tooltip="C:\\projects\\flask_helloworld\\Lib\\site-packages\\werkzeug\\_reloader.py"];
+	262 -> 256 [arrowsize="1.00", color="#ff0200", fontcolor="#ff0200", fontsize="10.00", label="99.84%\n1×", labeldistance="3.99", penwidth="3.99"];
+	266 [color="#ff0200", fontcolor="#ffffff", fontsize="10.00", label="subprocess:381:call\n99.83%\n(0.00%)\n1×", tooltip="C:\\Users\\dlee\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\subprocess.py"];
+	266 -> 303 [arrowsize="1.00", color="#ff0200", fontcolor="#ff0200", fontsize="10.00", label="99.81%\n1×", labeldistance="3.99", penwidth="3.99"];
+	303 [color="#ff0200", fontcolor="#ffffff", fontsize="10.00", label="subprocess:1257:wait\n99.81%\n(0.00%)\n1×", tooltip="C:\\Users\\dlee\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\subprocess.py"];
+	303 -> 352 [arrowsize="1.00", color="#ff0200", fontcolor="#ff0200", fontsize="10.00", label="99.81%\n2×", labeldistance="3.99", penwidth="3.99"];
+	352 [color="#ff0200", fontcolor="#ffffff", fontsize="10.00", label="subprocess:1551:_wait\n99.81%\n(0.00%)\n2×", tooltip="C:\\Users\\dlee\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\subprocess.py"];
+	352 -> 499 [arrowsize="1.00", color="#ff0200", fontcolor="#ff0200", fontsize="10.00", label="99.81%\n2×", labeldistance="3.99", penwidth="3.99"];
+	499 [color="#ff0200", fontcolor="#ffffff", fontsize="10.00", label="~:0:<built-in method _winapi.WaitForSingleObject>\n99.81%\n(99.81%)\n2×", tooltip="~"];
+}

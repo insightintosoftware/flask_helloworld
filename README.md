@@ -30,3 +30,60 @@
 5. Ran `pip freeze > requirements.txt`
 6. Created app.py
 
+
+
+
+
+### Hot to use cProfile
+
+#### Set up
+
+* You don't need to install anything. Just run the code with cProfile wrapped around it.
+
+```
+from flask import Flask
+import cProfile
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+  return 'Hello, World!'
+
+if __name__ == "__main__":
+  context = ('DependentCert.pem', 'MyDependentCertPrivate.key')
+  with cProfile.Profile() as pr:
+    app.run(debug=True, host="0.0.0.0", port=8443, ssl_context=context)
+    pr.dump_stats('flask_app.prof')
+```
+
+#### Visualize profile data with snakeviz
+
+* Then install snakeviz and run snakeviz command
+
+* ```
+  pip install snakeviz
+  snakeviz flask_app.prof
+  ```
+
+* This will bring up a website with visualization of flask_app.prof file.
+
+#### Visualize profile data with gprof2dot
+
+* Install gprof2dot. This is a tool that converts *.prof to *.dot file.
+
+* ```
+  pip install gprof2dot
+  gprof2dot -f pstats flask_app.prof -o flask_app.dot
+  ```
+
+* Download and install Graphviz for Windows. Use the following command to convert *.dot to *.png
+
+* ```
+  dot -Tpng flask_app.dot -o flask_app.png
+  ```
+
+
+
+## How to use line profiler
+
